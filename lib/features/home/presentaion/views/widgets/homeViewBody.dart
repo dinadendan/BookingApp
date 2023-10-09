@@ -1,5 +1,7 @@
+import 'package:booking_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'CustomItemList.dart';
+import 'BestSellerListViewItem.dart';
+import 'booksListView.dart';
 import 'customeAppBar.dart';
 
 class HomeViewBody extends StatelessWidget{
@@ -7,35 +9,34 @@ class HomeViewBody extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const[
-        CustomAppBar(),
-        BooksListView(),
-      ],
-    );
-  }
-}
-
-class BooksListView extends StatelessWidget {
-  const BooksListView({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * .3,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: ListView.builder(
-          scrollDirection:Axis.horizontal,
-          itemBuilder: (context,index){
-            return const CustomItemList();
-          },
-
-        ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children:const [
+          CustomAppBar(),
+          BooksListView(),
+          SizedBox(
+            height: 15,
+          ),
+          Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 10),
+            child: Text(
+              'Best Seller' ,
+              style: Styles.textStyle28,
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          BestSellerListViewItem(),
+        ],
       ),
     );
   }
 }
+
+
 
 
 
