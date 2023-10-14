@@ -48,7 +48,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-  get: ^4.6.5
+  go_router: ^11.1.3
+
   font_awesome_flutter: ^10.4.0
 
 

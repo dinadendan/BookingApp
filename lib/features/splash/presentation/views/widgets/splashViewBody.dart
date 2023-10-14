@@ -1,10 +1,10 @@
+import 'package:booking_app/core/utils/AppRouter.dart';
 import 'package:booking_app/core/utils/assets.dart';
 import 'package:booking_app/features/home/presentaion/views/homeView.dart';
 import 'package:booking_app/features/splash/presentation/views/widgets/slidingText.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../../constants.dart';
 
 
 class SplashViewBody extends StatefulWidget{
@@ -59,7 +59,12 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
 
   void navigateWithTransition() {
     Future.delayed(const Duration(seconds: 3),() {
-      Get.to(() =>const HomeView(),transition: Transition.fadeIn, duration: kTransitionDuration);
+      // Get.to(() =>const HomeView(),
+      //     transition: Transition.fadeIn,
+      //     duration: kTransitionDuration
+      // );
+
+      GoRouter.of(context).push(AppRouter.kHomeView);
     });
   }
 }

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:booking_app/core/utils/assets.dart';
 
 
-class CustomItemList extends StatelessWidget {
-  const CustomItemList({Key? key}) : super(key: key);
+class CustomBookImage extends StatelessWidget {
+  const CustomBookImage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

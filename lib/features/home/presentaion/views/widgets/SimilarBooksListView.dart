@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'CustomBookImage.dart';
 
-class BooksListView extends StatelessWidget {
-  const BooksListView({Key? key}) : super(key: key);
+class SimilarBooksListView extends StatelessWidget {
+  const SimilarBooksListView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * .3,
+      height: MediaQuery.of(context).size.height * .18,
       child: ListView.builder(
         scrollDirection:Axis.horizontal,
         itemBuilder: (context,index){
@@ -16,5 +16,6 @@ class BooksListView extends StatelessWidget {
 
       ),
     );
+
   }
 }
