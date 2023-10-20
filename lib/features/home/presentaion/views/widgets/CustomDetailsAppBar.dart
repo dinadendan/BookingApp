@@ -1,4 +1,7 @@
+import 'package:booking_app/core/utils/AppRouter.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 
 class CustomDetailsAppBar extends StatelessWidget {
   const CustomDetailsAppBar({Key? key}) : super(key: key);
@@ -9,7 +12,9 @@ class CustomDetailsAppBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
-          onPressed: (){},
+          onPressed: (){
+            GoRouter.of(context).push(AppRouter.kHomeView);
+          },
           icon: const Icon(Icons.close),
         ),
         IconButton(
