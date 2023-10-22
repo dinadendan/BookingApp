@@ -1,29 +1,19 @@
-/// smallThumbnail : "http://books.google.com/books/content?id=u13hVoYVZa8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"
-/// thumbnail : "http://books.google.com/books/content?id=u13hVoYVZa8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
 
 class ImageLinks {
-  ImageLinks({
-      String? smallThumbnail, 
-      String? thumbnail,}){
-    _smallThumbnail = smallThumbnail;
-    _thumbnail = thumbnail;
-}
+  final String smallThumbnail;
+  final String thumbnail;
 
-  ImageLinks.fromJson(dynamic json) {
-    _smallThumbnail = json['smallThumbnail'];
-    _thumbnail = json['thumbnail'];
-  }
-  String? _smallThumbnail;
-  String? _thumbnail;
+  const ImageLinks({required this.smallThumbnail, required this.thumbnail});
 
-  String? get smallThumbnail => _smallThumbnail;
-  String? get thumbnail => _thumbnail;
+  factory ImageLinks.fromJson(Map<String, dynamic> json) => ImageLinks(
+    smallThumbnail: json['smallThumbnail'] as String,
+    thumbnail: json['thumbnail'] as String,
+  );
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['smallThumbnail'] = _smallThumbnail;
-    map['thumbnail'] = _thumbnail;
-    return map;
-  }
+  Map<String, dynamic> toJson() => {
+    'smallThumbnail': smallThumbnail,
+    'thumbnail': thumbnail,
+  };
 
+  List<Object?> get props => [smallThumbnail, thumbnail];
 }
