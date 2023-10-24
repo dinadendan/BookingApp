@@ -1,4 +1,3 @@
-import 'package:booking_app/features/home/presentaion/views/widgets/BestSellerListViewItem.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
@@ -50,7 +49,7 @@ class SearchResultListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(horizontal: 10),
-          child:BestSellerListViewItem(),
+          child: Text('data'),
         );
       },
     );

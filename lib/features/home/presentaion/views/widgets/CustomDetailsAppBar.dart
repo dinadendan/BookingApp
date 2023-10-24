@@ -13,13 +13,13 @@ class CustomDetailsAppBar extends StatelessWidget {
       children: [
         IconButton(
           onPressed: (){
-            GoRouter.of(context).push(AppRouter.kHomeView);
+            GoRouter.of(context).pop();
           },
           icon: const Icon(Icons.close),
         ),
         IconButton(
           onPressed: (){},
-          icon: Icon(Icons.shopping_cart_outlined),
+          icon: const Icon(Icons.shopping_cart_outlined),
         ),
       ],
     );

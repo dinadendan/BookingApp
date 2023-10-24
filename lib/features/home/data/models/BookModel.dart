@@ -8,7 +8,7 @@ class BookModel  {
   final String? id;
   final String? etag;
   final String? selfLink;
-  final VolumeInfo volumeInfo;
+  final VolumeInfo? volumeInfo;
   final SaleInfo? saleInfo;
   final AccessInfo? accessInfo;
   final SearchInfo? searchInfo;
@@ -47,7 +47,7 @@ class BookModel  {
     'id': id,
     'etag': etag,
     'selfLink': selfLink,
-    'volumeInfo': volumeInfo.toJson(),
+    'volumeInfo': volumeInfo?.toJson(),
     'saleInfo': saleInfo?.toJson(),
     'accessInfo': accessInfo?.toJson(),
     'searchInfo': searchInfo?.toJson(),

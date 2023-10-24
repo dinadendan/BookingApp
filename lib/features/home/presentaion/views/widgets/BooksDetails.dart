@@ -1,47 +1,56 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../core/utils/styles.dart';
+import '../../../data/models/BookModel.dart';
 import 'BookingRating.dart';
 import 'BooksAction.dart';
 import 'CustomBookImage.dart';
 
 class BooksDetails extends StatelessWidget {
-  const BooksDetails({Key? key}) : super(key: key);
+  const BooksDetails({Key? key, required this.bookModel}) : super(key: key);
+
+  final BookModel bookModel ;
+
 
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-
     return Column(
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .19),
-          child:  CustomBookImage(
-            imageUrl: 'http://books.google.com/books/content?id=9GwrmHRl490C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+          child: CustomBookImage(
+            imageUrl:bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
           ),
+
         ),
-        const Text(
-          'The Jungle Book ' ,
+         Text(
+          bookModel.volumeInfo?.title ?? '',
           style: Styles.textStyle30 ,),
         const SizedBox(
           height: 5,
         ),
-        const Opacity(
+         Opacity(
           opacity: .7,
-          child: Text('Rudyard Kipling',
+          child: Text(
+            bookModel.volumeInfo?.authors![0] ?? '',
             style: Styles.textStyle20,
           ),
         ),
         const SizedBox(
           height: 20,
         ),
-        const BookRating(
+         BookRating(
+          rating: bookModel.volumeInfo?.averageRating ?? 0,
+          count: bookModel.volumeInfo?.ratingsCount ?? 0,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const SizedBox(
           height: 20,
         ),
-        const BooksAction(),
+         BooksAction(
+           bookModel: bookModel,
+
+         ),
       ],
     );
   }

@@ -1,6 +1,6 @@
 import 'package:booking_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'BestSellerListView.dart';
+import 'NewestBooksListView.dart';
 import 'booksListView.dart';
 import 'customeAppBar.dart';
 
@@ -39,7 +39,7 @@ class HomeViewBody extends StatelessWidget{
         const SliverFillRemaining(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: BestSellerListView(),
+            child: NewestBooksListView(),
           ),
         ),
       ],

@@ -7,8 +7,8 @@ import '../../../../../core/widgets/customErrorWidget.dart';
 import '../../../../../core/widgets/customLoadingIndicator.dart';
 import 'BestSellerListViewItem.dart';
 
-class BestSellerListView extends StatelessWidget{
-  const BestSellerListView({Key? key}) : super(key: key);
+class NewestBooksListView extends StatelessWidget{
+  const NewestBooksListView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +16,13 @@ class BestSellerListView extends StatelessWidget{
       builder: (context,state){
         if(state is NewestBookSuccess){
           return  ListView.builder(
-
             physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.zero,
             itemCount: state.books.length,
-            itemBuilder: (context, index ) => const BestSellerListViewItem(),
+            itemBuilder: (context, index ) =>
+                NewestBooksListViewItem(
+              bookModel: state.books[index],
+            ),
           );
         } else if(state is NewestBookFailure){
           return CustomErrorWidget(errMessage: state.errMessage);

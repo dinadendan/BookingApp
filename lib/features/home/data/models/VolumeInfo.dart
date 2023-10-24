@@ -10,7 +10,6 @@ class VolumeInfo  {
   final String? publisher;
   final String? publishedDate;
   final String? description;
-  // final List<IndustryIdentifier>? industryIdentifiers;
   final ReadingModes? readingModes;
   final int? pageCount;
   final String? printType;
@@ -21,7 +20,7 @@ class VolumeInfo  {
   final bool? allowAnonLogging;
   final String? contentVersion;
   final PanelizationSummary? panelizationSummary;
-  final ImageLinks imageLinks;
+  final ImageLinks? imageLinks;
   final String? language;
   final String? previewLink;
   final String? infoLink;
@@ -76,7 +75,8 @@ class VolumeInfo  {
         ? null
         : PanelizationSummary.fromJson(
         json['panelizationSummary'] as Map<String, dynamic>),
-    imageLinks: ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
+    imageLinks:json['imageLinks']  == null ? null :
+    ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
     language: json['language'] as String?,
     previewLink: json['previewLink'] as String?,
     infoLink: json['infoLink'] as String?,
@@ -89,8 +89,6 @@ class VolumeInfo  {
     'publisher': publisher,
     'publishedDate': publishedDate,
     'description': description,
-    // 'industryIdentifiers':
-    // industryIdentifiers?.map((e) => e.toJson()).toList(),
     'readingModes': readingModes?.toJson(),
     'pageCount': pageCount,
     'printType': printType,
@@ -101,7 +99,7 @@ class VolumeInfo  {
     'allowAnonLogging': allowAnonLogging,
     'contentVersion': contentVersion,
     'panelizationSummary': panelizationSummary?.toJson(),
-    'imageLinks': imageLinks.toJson(),
+    'imageLinks': imageLinks?.toJson(),
     'language': language,
     'previewLink': previewLink,
     'infoLink': infoLink,
@@ -115,7 +113,6 @@ class VolumeInfo  {
       publisher,
       publishedDate,
       description,
-      // industryIdentifiers,
       readingModes,
       pageCount,
       printType,
