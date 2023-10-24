@@ -2,10 +2,9 @@ import 'package:booking_app/features/home/presentaion/Manager/NewestBooksCubit/N
 import 'package:booking_app/features/home/presentaion/Manager/NewestBooksCubit/NewestBooksStates.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../../core/widgets/customErrorWidget.dart';
 import '../../../../../core/widgets/customLoadingIndicator.dart';
-import 'BestSellerListViewItem.dart';
+import 'NewestBooksListViewItem.dart';
 
 class NewestBooksListView extends StatelessWidget{
   const NewestBooksListView({Key? key}) : super(key: key);

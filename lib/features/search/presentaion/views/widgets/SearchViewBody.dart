@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../core/utils/styles.dart';
+import '../../../../home/presentaion/views/widgets/CustomDetailsAppBar.dart';
 import 'CustomSearchTextField.dart';
+import 'SearchResultListView.dart';
 
 class SearchViewBody extends StatelessWidget{
-  const SearchViewBody({Key? key}) : super(key: key);
+  const SearchViewBody({Key? key }) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -15,19 +17,21 @@ class SearchViewBody extends StatelessWidget{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children:const [
+              CustomDetailsAppBar(),
               CustomSearchTextField(),
               SizedBox(
                 height: 20,
               ),
               Text(
                 'Search Result',
-                style: Styles.textStyle18,
+                style: Styles.textStyle20,
               ),
               SizedBox(
                 height: 16,
               ),
               Expanded(
-                  child: SearchResultListView ()),
+                  child: SearchResultListView (),
+              ),
             ],
           ),
         ),
@@ -38,21 +42,4 @@ class SearchViewBody extends StatelessWidget{
 }
 
 
-class SearchResultListView extends StatelessWidget {
-  const SearchResultListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: EdgeInsets.zero,
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        return const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Text('data'),
-        );
-      },
-    );
-  }
-}
 

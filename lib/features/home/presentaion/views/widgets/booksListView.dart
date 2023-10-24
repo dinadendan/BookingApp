@@ -6,7 +6,6 @@ import '../../../../../core/widgets/customErrorWidget.dart';
 import '../../../../../core/widgets/customLoadingIndicator.dart';
 import 'CustomBookImage.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:go_router/go_router.dart';
 
 class BooksListView extends StatelessWidget {

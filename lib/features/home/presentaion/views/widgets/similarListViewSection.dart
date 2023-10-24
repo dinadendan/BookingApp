@@ -12,8 +12,8 @@ class SimilarListViewSection extends StatelessWidget{
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'You can also like' ,
-          style: Styles.textStyle18.copyWith(
+          'You can also like : ' ,
+          style: Styles.textStyle20.copyWith(
               fontWeight: FontWeight.bold
           ),
         ),

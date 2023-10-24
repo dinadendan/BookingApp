@@ -17,13 +17,16 @@ class BooksDetails extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * .19),
+          padding: EdgeInsets.symmetric(horizontal: width * .18 , vertical: 10),
           child: CustomBookImage(
             imageUrl:bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
           ),
 
         ),
-         Text(
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
           bookModel.volumeInfo?.title ?? '',
           style: Styles.textStyle30 ,),
         const SizedBox(
@@ -45,7 +48,7 @@ class BooksDetails extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const SizedBox(
-          height: 20,
+          height: 30,
         ),
          BooksAction(
            bookModel: bookModel,

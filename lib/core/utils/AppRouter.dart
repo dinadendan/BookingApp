@@ -38,7 +38,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kSearchView ,
-        builder: (BuildContext context, GoRouterState state) =>  const SearchViewBody(),
+        builder: (BuildContext context, GoRouterState state) => const SearchViewBody(),
       ),
     ],
   );

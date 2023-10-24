@@ -7,6 +7,7 @@ import 'core/utils/ServiceLocator.dart';
 import 'features/home/data/repos/homeRepoImplement.dart';
 import 'features/home/presentaion/Manager/FeaturedBooksCubit/FeaturedBooksCubit.dart';
 import 'features/home/presentaion/Manager/NewestBooksCubit/NewestBooksCubit.dart';
+import 'features/search/presentaion/Manager/searchCubit/searchCubit.dart';
 
 
 
@@ -32,6 +33,11 @@ class BookApp extends StatelessWidget {
           create: (context) => NewestBooksCubit(
             getIt.get<HomRepoImplement>(),
           )..fetchNewestBooks(),
+        ),
+        BlocProvider(
+          create: (context) =>
+              SearchBooksCubit(
+                  getIt.get<HomRepoImplement>()),
         )
       ],
       child: MaterialApp.router(
