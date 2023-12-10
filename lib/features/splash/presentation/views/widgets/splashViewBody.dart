@@ -1,10 +1,9 @@
 import 'package:booking_app/core/utils/AppRouter.dart';
 import 'package:booking_app/core/utils/assets.dart';
-import 'package:booking_app/features/home/presentaion/views/homeView.dart';
 import 'package:booking_app/features/splash/presentation/views/widgets/slidingText.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class SplashViewBody extends StatefulWidget{
@@ -41,8 +40,8 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image.asset(AssetsData.logo),
-        const SizedBox(
-          height: 5,
+        SizedBox(
+          height: 5.h,
         ),
         SlidingText(slidingAnimation: slidingAnimation),
 

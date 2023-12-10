@@ -55,6 +55,8 @@ dev_dependencies:
   cached_network_image: ^3.2.3
   get_it: ^7.6.0
   url_launcher: ^6.1.11
+  flutter_screenutil: ^5.9.0
+
 
 
 

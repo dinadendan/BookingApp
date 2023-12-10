@@ -8,7 +8,7 @@ import 'features/home/data/repos/homeRepoImplement.dart';
 import 'features/home/presentaion/Manager/FeaturedBooksCubit/FeaturedBooksCubit.dart';
 import 'features/home/presentaion/Manager/NewestBooksCubit/NewestBooksCubit.dart';
 import 'features/search/presentaion/Manager/searchCubit/searchCubit.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 void main() {
@@ -40,15 +40,18 @@ class BookApp extends StatelessWidget {
                   getIt.get<HomRepoImplement>()),
         )
       ],
-      child: MaterialApp.router(
-        routerConfig:AppRouter.router,
-        theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: kPrimaryColor,
-          textTheme: GoogleFonts.montserratTextTheme(ThemeData
-              .dark()
-              .textTheme),
+      child: ScreenUtilInit(
+        designSize: const Size(375, 812),
+        child: MaterialApp.router(
+          routerConfig:AppRouter.router,
+          theme: ThemeData.dark().copyWith(
+            scaffoldBackgroundColor: kPrimaryColor,
+            textTheme: GoogleFonts.montserratTextTheme(ThemeData
+                .dark()
+                .textTheme),
+          ),
+          debugShowCheckedModeBanner: false,
         ),
-        debugShowCheckedModeBanner: false,
       ),
     );
   }
