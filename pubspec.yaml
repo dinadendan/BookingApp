@@ -56,10 +56,6 @@ dev_dependencies:
   get_it: ^7.6.0
   url_launcher: ^6.1.11
   flutter_screenutil: ^5.9.0
-
-
-
-
   font_awesome_flutter: ^10.4.0
 
 
